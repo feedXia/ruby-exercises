@@ -10,5 +10,8 @@ elsif x % 3 == 0
 else
 	puts x
 end
-	
+
+
+
+
 	

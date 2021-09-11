@@ -9,9 +9,11 @@ def compare_dice()
     if my_die > your_die
         puts "#{my_die} is higher than #{your_die}. You win! :)"
         return true
-    else
+    elsif my_die < your_die
         puts "#{my_die} is lower than #{your_die}. You lose! :("
         return false
+    else 
+        puts "We both got #{my_die}, it's a draw! :|"
     end
 end
 
