@@ -7,3 +7,4 @@ puts "What's your name?"
 name = gets.chomp.capitalize
 
 name.start_with?('S') ? (puts "#{name.upcase}!") : (puts "Hi, #{name}.")
+
