@@ -48,3 +48,30 @@ def run(num1, num2)
 end
 
 run(4,8)
+
+# **************************
+# Q2
+# Create a new file and fix the greet method (see below) so that it doesn’t violate SRP
+# Single Responsibility Principle
+# 3 responsibilities
+
+def greet
+  # greets a user
+  # asks the user what their name is, takes their name and then says "user_name, it's lovely to meet you!"
+  puts "Hello! What's your name?"
+  user_name = gets.chomp
+  puts "#{user_name}, it's lovely to meet you!"
+end
+
+# tells the user the weather today 
+# - the weather should be randomly chosen and there should be 3 options
+def weather
+  w = ["Sunshine", "Rain", "Snow"]
+  puts w[rand(3)]
+end
+
+# Tells a user the time now
+def time
+  puts Time.now
+end
+
