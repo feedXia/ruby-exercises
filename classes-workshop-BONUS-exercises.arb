@@ -1,0 +1,40 @@
+# BONUS exercises
+#   - Create a Customer class
+#   - Give the customer the behaviour of buying items
+#   - Keep a list of the items
+#   - Create a Display class
+#   - Display the customer items
+
+class Customer
+  def initialize
+    @item_list = []
+  end
+
+  def buy(item)
+    @item_list << item
+  end
+
+  def items
+    @item_list
+  end
+end
+
+class Display
+  def initialize(customer = Customer.new)
+    @customer = customer
+  end
+
+  def show
+    # Originally p shows: "You have bought: [\"avocados\"].to_s"
+    # 'join' method allows array to be printed without [\
+    p "You have bought: #{@customer.items.join('')}"
+  end
+
+end
+
+customer = Customer.new
+customer.buy('avocados')
+p @item_list
+
+display = Display.new(customer)
+display.show
