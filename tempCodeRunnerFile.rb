@@ -1,1 +1,4 @@
-i == arr.length - 1
+i += 1
+    # p i
+    # pow += 1
+    # p pow
