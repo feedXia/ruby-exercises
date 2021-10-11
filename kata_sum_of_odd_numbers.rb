@@ -12,7 +12,7 @@
 # 2 --> 3 + 5 = 8
 
 def row_sum_odd_numbers(n)
-  p n ** 3
+  n ** 3
 end
 
 # Tests
