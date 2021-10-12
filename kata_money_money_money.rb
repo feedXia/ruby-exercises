@@ -19,9 +19,20 @@
 #   P = 1128.30
 
 def calculate_years(principal, interest, tax, desired)
-  throw NotImplementedError.new "TODO: calculate_years"
-  Y1 = principal * (1 + interest) - (principal * interest - principal) * tax
+  year = 0
+  total = principal
+  while total < desired
+    year += 1
+    total = total * (1 + interest - interest * tax)
+  end
+  year
 end
+
+#  Alternative Solution
+# def calculate_years(principal, interest, tax, desired)
+#   return 0 if principal >= desired
+#   Math::log(desired.to_f / principal, 1 + interest * (1 - tax)).ceil
+# end
 
 calculate_years(1000, 0.05, 0.18, 1100)
 # => 3
