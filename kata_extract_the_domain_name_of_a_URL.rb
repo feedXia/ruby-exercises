@@ -12,7 +12,6 @@ def domain_name(url)
   else
     p url.partition(".").first
   end
-  # url.chars.first == "w" ?
 end
 
 #  Tests
@@ -28,3 +27,17 @@ domain_name("https://www.codewars.com")
 #  => "codewars"
 domain_name("icann.org")
 #  => "icann"
+
+# Alternate Solutions
+def domain_name(url)
+  URI.parse(url).host.split(".").last(2)[0]
+end
+
+def domain_name(url)
+  regex = /(http|https):\/\/(?:www\.)?(?<domain_name>.*?)\./
+  url.match(regex)[:domain_name]
+end
+
+def domain_name(url)
+  url.match(/.*[\.\/](.*)\./)[1]
+end
