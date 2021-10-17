@@ -15,9 +15,6 @@
 #   title_case('a clash of KINGS', 'a an the of') # should return: 'A Clash of Kings'
 #   title_case('THE WIND IN THE WILLOWS', 'The In') # should return: 'The Wind in the Willows'
 #   title_case('the quick brown fox') # should return: 'The Quick Brown Fox'
-def title_case(title, minor_words = "")
-  title.capitalize.split().map { |a| minor_words.downcase.split().include?(a) ? a : a.capitalize }.join(" ")
-end
 
 def title_case(title, minor_words = "")
   words = title.capitalize.split(" ")
@@ -45,6 +42,10 @@ end
 #   end
 #   p words.join(" ")
 # end
+
+def title_case(title, minor_words = "")
+  title.capitalize.split().map { |a| minor_words.downcase.split().include?(a) ? a : a.capitalize }.join(" ")
+end
 
 # Tests
 title_case("")
