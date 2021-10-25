@@ -1,5 +1,9 @@
-p ("a".."z").to_a.join("").upcase
+regex = /[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)/
 
-abcdefghijklmnopqrstuvwxyz
+# OR
+regex = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/
 
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
+# Tests
+p (regex =~ "CoreyMSchafer@gmail.com") == 0
+p (regex =~ "corey.schafer@university.edu") == 0
+p (regex =~ "corey-321-schafer@my-work.net") == 0
